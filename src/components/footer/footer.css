@@ -1,0 +1,30 @@
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "description links";
+    min-height:30vh;
+    background:#F48F3A;
+    position: absolute;
+    top: 100vh; left: 0;right: 0;bottom:0;
+    transition: 0.2s;
+    background: rgb(249,183,80);
+    background: linear-gradient(90deg, rgba(249,183,80,1) 0%, rgba(250,191,74,1) 22%, rgba(247,212,83,1) 66%, rgba(250,229,153,1) 89%);
+}
+
+.footer-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.description {
+    grid-area: description;
+}
+
+.links {
+    grid-area: links;
+ }

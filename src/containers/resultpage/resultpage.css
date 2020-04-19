@@ -1,0 +1,63 @@
+.resultPage {
+    display: grid;
+    grid-template-areas: 'Info Map Map'
+                         'Meter Map Map';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    height: 100vh;
+    position: absolute;top: 0;bottom: 0;left: 0;right: 0;
+}
+
+.resultPage > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.2s;
+    border-radius: 10px;
+}
+
+.actionsWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.actionWrapper {
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.actionWrapper:hover {
+    cursor: pointer;
+}
+
+.Info {
+    grid-area: Info;
+    margin: 10px;
+    background-image: url("https://www.irafina.gr/wp-content/uploads/2018/11/sklavenitis_spata_emporiko-750x430.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.marketBasicInfo {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 50%;
+    align-self: center;
+    color: black;
+    border-radius: 10px;
+}
+
+.Meter {
+    grid-area: Meter;
+    margin: 10px;
+    background-color: white;
+    background-image: url("https://api.time.com/wp-content/uploads/2020/03/grocery-store-safety-coronavirus.jpg?quality=85&w=1012&h=569&crop=1");
+    background-size: cover;
+}
+
+.Map {
+    grid-area: Map;
+}

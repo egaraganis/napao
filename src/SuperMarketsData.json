@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Σκλαβενίτης",
+        "tel":"2109932172",
+        "squaremeters":"340",
+        "address": "Θεομήτορος 43",
+        "coords": [23.7263,37.9186],
+        "photo":"photolink",
+        "peopleIn":"40",
+        "maxPeople":"200"
+    },
+    {
+        "name": "ΑΒ Βασιλόπουλος",
+        "tel":"2109932172",
+        "squaremeters":"202",
+        "address": "Θεομήτορος 56",
+        "coords": [23.7223,37.9166],
+        "photo":"photolink",
+        "peopleIn":"30",
+        "maxPeople":"200"
+    },
+    {
+        "name": "Κρητικός",
+        "tel":"2109932172",
+        "squaremeters":"500",
+        "address": "Θεομήτορος 72",
+        "coords": [23.7113,37.9116],
+        "photo":"photolink",
+        "peopleIn":"60",
+        "maxPeople":"200"
+    },
+    {
+        "name": "Κρητικός",
+        "tel":"2109932172",
+        "squaremeters":"500",
+        "address": "Θεομήτορος 72",
+        "coords": [23.7213,37.9116],
+        "photo":"photolink",
+        "peopleIn":"60",
+        "maxPeople":"200"
+    },
+    {
+        "name": "Κρητικός",
+        "tel":"2109932172",
+        "squaremeters":"500",
+        "address": "Θεομήτορος 72",
+        "coords": [23.7450,37.9196],
+        "photo":"photolink",
+        "peopleIn":"60",
+        "maxPeople":"200"
+    }
+]
