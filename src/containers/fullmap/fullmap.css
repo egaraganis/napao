@@ -6,10 +6,14 @@
     bottom:0;
 }
 
-.marketPreview {
+.marketPreview :hover {
+    cursor: pointer;
+}
+
+.marketPreviewPhoto {
     background-image: url("https://www.irafina.gr/wp-content/uploads/2018/11/sklavenitis_spata_emporiko-750x430.jpg");
     background-size: cover;
-    width:25vw;
+    width:20vw;
     height:25vh;
     border-radius: 15px;
     margin:20px;
@@ -17,6 +21,10 @@
 
 .marketPreviewInfo {
     text-align: center;
+}
+
+.marketPreview:hover {
+    cursor: pointer;
 }
 
 .marketPreviewInfo > p {

@@ -12,8 +12,8 @@ class BasicInfo extends React.Component {
             <Grid container direction="column" justify="center" alignItems="center">
                 <TextField
                 id="marketname"
-                label="1. Όνομα Καταστήματος"
-                placeholder="Ποιό είναι το όνομα του καταστήματος"
+                label="1. Market's Name"
+                placeholder="What's the market's name"
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
@@ -23,8 +23,8 @@ class BasicInfo extends React.Component {
                 }}/>
                 <TextField
                 id="marketel"
-                label="2. Τηλέφωνο Καταστήματος"
-                placeholder="Ποιό είναι το τηλέφωνο του καταστήματος"
+                label="2. Telephone"
+                placeholder="What's the market's telephone"
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
@@ -34,8 +34,8 @@ class BasicInfo extends React.Component {
                 }}/>
                 <TextField
                 id="marketsquaremeters"
-                label="3. Τετραγωνικά Καταστήματος"
-                placeholder="Πόσα τετραγωνικά μέτρα είναι το κατάστημα"
+                label="3. Square meters "
+                placeholder="How many square meters is the market ?"
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">

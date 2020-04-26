@@ -1,31 +1,21 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import BackButton from "../../components/backbutton/backbutton";
 import EditButton from "../../components/editbutton/editbutton";
 import MapGL,{Marker} from "react-map-gl";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import AlarmAddIcon from '@material-ui/icons/AlarmAdd';
+import RateReviewIcon from '@material-ui/icons/RateReview';
+import AppsIcon from '@material-ui/icons/Apps';
 import { withStyles } from '@material-ui/core/styles';
+import graph from '../../assets/img/graph.png';
 import './managestore.css';
 
 const styles = theme => ({
-    input: {
-        '& label.Mui-focused': {
-            color: '#000',
-        },
-        borderRadius:'5px',
-        backgroundColor:'#fff',
-        width:'360px',
-    },
-    button: {
-        '&:hover': {
-            backgroundColor: '#4b5366',
-            borderColor: '#4b5366',
-            boxShadow: 'none',
-        },
+    icon:{
+        fontSize:40
     }
 });
 
@@ -41,7 +31,7 @@ class ManageStore extends Component {
             viewport: {
                 longitude:23.7263,
                 latitude:37.9186,
-                zoom: 3.80,
+                zoom: 5.80,
                 height: '33.3vh',
                 width: '40vw',
             }
@@ -72,19 +62,19 @@ class ManageStore extends Component {
             <div>
                 <BackButton />
                 <EditButton />
-                <div className="grid-container">
+                <div className="ManageStoreContainer">
                     <div className="Photo">
                         <div class="Time">
-                            <p> Τρέχον Ώρα: 4:02:32 μ.μ. </p>
-                            <p> Ωράριο: 9:00 π.μ. - 9:00 μ.μ. </p>
+                            <h3> Current Time: 4:02:32 p.m. </h3>
+                            <h3> Shedule: 9:00 a.m. - 9:00 p.m. </h3>
                         </div>
                     </div>
                     <div className="StoreInfo">
                         <Grid container direction="column">
-                            <h3> Σκλαβενίτης </h3>
-                            <h4> Θεομήτορος 47</h4>
+                            <h3> Sklavenitis </h3>
+                            <h4> Theomitoros 47</h4>
                             <p> 2109938654 </p>
-                            <p> 410 τ.μ. </p>
+                            <p> 410 s.m. </p>
                         </Grid>
                         <div>
                             <MapGL
@@ -101,65 +91,57 @@ class ManageStore extends Component {
                         </div>
                     </div>
                     <div class="Manage">
-                        <div className="manage-container">
-                            <div class="Announcement">
-                                <h4> Δημιουργία Ανακοίνωσης </h4>
-                                <p style={{margin:11}}>
-                                    Η ανακοίνωση θα αναρτηθεί στη σελίδα του καταστήματος
-                                </p>
-                                <TextField
-                                className={classes.input}
-                                id="title"
-                                placeholder="Τίτλος ανακοίνωσης"
-                                variant="outlined"/>
-                                <TextField
-                                className={classes.input}
-                                id="outlined-multiline-static"
-                                multiline
-                                rows={4}
-                                placeholder="Περιεχόμενο της ανακοίνωσης"
-                                variant="outlined"/>
-                                <Button className={classes.button}>
-                                    ΑΝΑΡΤΗΣΗ
-                                </Button>
+                        <div className="OperationsContainer">
+                            <div className="Toolbar">
+                                <RateReviewIcon color="primary" className={classes.icon} />
+                                <AlarmAddIcon color="primary" className={classes.icon} />
+                                <AppsIcon color="primary" className={classes.icon} />
                             </div>
                             <div className="Graph">
-                                <div className="img" />
-                                <p style={{fontSize:'15px'}}> Αριθμός πελατών ανά τον χρόνο </p>
-                                <div className="data">
-                                    <p> • Μέσος Χρόνος Αναμονής Πελάτη: 13 λεπτά </p>
-                                    <p> • Μέσος Χρόνος Ψωνίσματος: 16 λεπτά </p>
-                                    <p> • Εκτιμώμενος Χρόνος ελεύθερης θέσης: 2 λεπτά </p>
+                                <img src={graph} alt="graph" style={{width:'50vw',height:'99%'}}/>
+                                <div className="GraphData">
+                                    <h3>
+                                        • Mean waiting time:
+                                        <h2> 13 min </h2>
+                                    </h3>
+                                    <h3>
+                                        • Next customer in approx:
+                                        <h2> 18 min </h2>
+                                    </h3>
+                                    <h3>
+                                        • Stain' in store around:
+                                        <h2> 9 min </h2>
+                                    </h3>
                                 </div>
                             </div>
-                            <div class="People-Data">
+                            <div class="PeopleData">
                                 <div>
-                                    <h4> Μεγιστός Αριθμός Ατόμων: </h4>
-                                    <p className="peopleCounter"> {this.state.maxPeople} </p>
+                                    <h3> Max People: </h3>
+                                    <p className="PeopleCounter"> {this.state.maxPeople} </p>
                                 </div>
                                 { (this.state.peopleIn !== 0)
                                     ?   <div>
-                                            <h4> Εντός Καταστήματος </h4>
-                                            <p className="peopleCounter"> {this.state.peopleIn} </p>
+                                            <h3> In Store: </h3>
+                                            <p className="PeopleCounter"> {this.state.peopleIn} </p>
                                         </div>
-                                    :   <p style={{color:'green',fontSize:'18px',margin:'35px'}}>
-                                            Το Κατάστημα είναι άδειο
+                                    :   <p style={{color:'green',fontSize:'25px',margin:'35px'}}>
+                                            Store has no customers
                                         </p>
                                 }
                                 { (this.state.peopleIn !== this.state.maxPeople)
                                     ?   <div>
-                                            <h4> Ελεύθερες Θέσεις: </h4>
-                                            <p className="peopleCounter"> {this.state.maxPeople - this.state.peopleIn} </p>
+                                            <h3> Can serve : </h3>
+                                            <p className="PeopleCounter"> {this.state.maxPeople - this.state.peopleIn} </p>
                                         </div>
-                                    :   <p style={{color:'red',fontSize:'18px',margin:'35px'}}>
-                                            Το Κατάστημα δεν μπορεί να πάρει άλλο πελάτη
+                                    :   <p style={{color:'red',fontSize:'25px',margin:'35px'}}>
+                                            The store cannot serve another customer
                                         </p>
                                 }
-                                <div className="buttonGroup">
-                                    <div className="customerButton" onClick={this.customerIn}>
+                                <div className="ButtonGroup">
+                                    <div className="CustomerButton" onClick={this.customerIn}>
                                         <AddIcon style={{color:'#fff'}} />
                                     </div>
-                                    <div className="customerButton" onClick={this.customerOut}>
+                                    <div className="CustomerButton" onClick={this.customerOut}>
                                         <RemoveIcon style={{color:'#fff'}} />
                                     </div>
                                 </div>

@@ -1,12 +1,12 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
-import {Link} from "react-router-dom";
-import {ReactComponent as VirusIcon} from '../../assets/svg/virus.svg';
+import MapIcon from '@material-ui/icons/Map';
+import IconButton from '@material-ui/core/IconButton';
+import Logo from '../../components/logo/logo';
 import { withStyles } from '@material-ui/core/styles';
 import './homepage.css';
 
@@ -15,7 +15,9 @@ const styles = theme => ({
         display: 'flex',
         alignItems: 'center',
         padding: '2px 4px',
-        width: 600,
+        width: '50vw',
+        minWidth:'300px',
+        marginTop:'30px'
     },
     input: {
         marginLeft: theme.spacing(1),
@@ -33,12 +35,6 @@ const styles = theme => ({
         textDecoration: 'none',
         fontWeight:'900'
     },
-    icon: {
-        fill:'#000',
-        width:'5vw',
-        paddingBottom: '20px',
-        marginRight:'10px',
-    }
 });
 
 class Homepage extends React.Component {
@@ -60,24 +56,21 @@ class Homepage extends React.Component {
             <div className="homePage">
                 <div className="moreWrapper">
                     <Link to="/login" className={classes.link}>
-                        <p className="homeMore">
-                            Συνδεθείτε
-                        </p>
+                        <h3 className="homeMore">
+                            Log In
+                        </h3>
                     </Link>
                     <Link to="/addmarket" className={classes.link}>
-                        <p className="homeMore">
-                            Προσθέστε το κατάστημά σας
-                        </p>
+                        <h3 className="homeMore">
+                            Add your store
+                        </h3>
                     </Link>
                 </div>
-                <div className="logo">
-                    <VirusIcon className={classes.icon} />
-                    <h1 className="homeHeader"> να πάω ; </h1>
-                </div>
+                <Logo className={classes.logo}/>
                 <Paper component="form" className={classes.root} onSubmit={this.handleSubmit}>
                     <InputBase
                     className={classes.input}
-                    placeholder="Όνομα καταστήματος, διεύθυνση, άλλο"
+                    placeholder="Type grocery's store name, address, other..."
                     onChange = {(event) => this.inputChangedHandler(event)}/>
                     <IconButton type="submit" className={classes.iconButton} aria-label="search">
                         <SearchIcon />
@@ -85,7 +78,7 @@ class Homepage extends React.Component {
                     <Divider className={classes.divider} orientation="vertical" />
                     <Link to='/fullmap'>
                         <IconButton color="primary" className={classes.iconButton} aria-label="directions">
-                            <DirectionsIcon />
+                            <MapIcon />
                         </IconButton>
                     </Link>
                 </Paper>

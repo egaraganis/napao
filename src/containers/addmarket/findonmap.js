@@ -49,8 +49,8 @@ class FindStoreInMap extends Component {
                 <TextField
                 style={{width:'400px',marginBottom:'20px'}}
                 id="input-with-icon-textfield"
-                label="4. Διεύθυνση Καταστήματος"
-                placeholder="Ποιά είναι η διεύθυνση του καταστήματος"
+                label="4. Market's address"
+                placeholder="What's the markets address"
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
@@ -59,7 +59,9 @@ class FindStoreInMap extends Component {
                     ),
                 }}/>
                 <div style={{width:'40vw',textAlign:'center',color:'#545454'}}>
-                    <p> Παρακαλούμε, βρείτε το κατάστημά σας στον χάρτη, κάνοντας όσο ζουμ χρειάζεται και κεντράροτας το κατάστημα σας</p>
+                    <h4>
+                        Please locate the store on map, zooming in and centering it.
+                    </h4>
                 </div>
                 <MapGL
                 ref={this.mapRef}

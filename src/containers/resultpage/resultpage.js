@@ -27,7 +27,6 @@ class ResultPage extends Component {
             this.setState(marketData);
     }
 
-
     render() {
         return (
             <div>
@@ -35,8 +34,8 @@ class ResultPage extends Component {
                 <div className="resultPage">
                     <div className="Info">
                         <div className="marketBasicInfo">
-                            <p style={{fontWeight:'bold'}}> {this.state.name} </p>
-                            <p> {this.state.address} </p>
+                            <h2 style={{fontWeight:'bold'}}> {this.state.name} </h2>
+                            <h3> {this.state.address} </h3>
                             <div className="actionsWrapper">
                                 <div className="actionWrapper">
                                     <Tooltip title={this.state.tel}>
@@ -44,12 +43,12 @@ class ResultPage extends Component {
                                     </Tooltip>
                                 </div>
                                 <div className="actionWrapper">
-                                    <Tooltip title="Προσθήκη ειδοποίησης, όταν αδειάσει από κόσμο">
+                                    <Tooltip title="Send me a notification when store has few people">
                                         <AddAlertIcon color="primary"/>
                                     </Tooltip>
                                 </div>
                                 <div className="actionWrapper">
-                                    <Tooltip title="Δεν υπάρχει κάποια ανακοίνωση απο το κατάστημα">
+                                    <Tooltip title="Store announcements">
                                         <ChatIcon color="primary"/>
                                     </Tooltip>
                                 </div>
@@ -63,8 +62,8 @@ class ResultPage extends Component {
                      </div>
                      <div className="Meter">
                         <div className="marketBasicInfo">
-                            <p style={{margin:'10px'}}> Αυτή τη στιγμή το κατάστημα έχει:</p>
-                            <p style={{color:'green',fontWeight:'bold'}}> Λίγο Κόσμο </p>
+                            <h2 style={{margin:'10px'}}> The store currently has:</h2>
+                            <h2 style={{color:'green',fontWeight:'bold'}}> Few customers </h2>
                         </div>
                      </div>
                      <div className="Map">

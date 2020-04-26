@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-    return ['Βασικά Στοιχεία', 'Τοποθεσία', 'Στοιχεία Σύνδεσης'];
+    return ['Basic Info', 'Location', 'Credentials'];
 }
 
 function getStepContent(step) {
@@ -117,7 +117,7 @@ export default function AddMarket() {
         <div className="SecondaryPage">
             <Backbutton />
             <form className="FormWrapper">
-                <h3> Προσθήκη Καταστήματος </h3>
+                <h2> Sign Up, level up your grocery store today </h2>
                 <Stepper className={classes.stepper} alternativeLabel nonLinear activeStep={activeStep}>
                     {steps.map((label, index) => {
                         const stepProps = {};
@@ -137,12 +137,12 @@ export default function AddMarket() {
                 </Stepper>
                 {allStepsCompleted()
                     ?   (<div className={classes.formController}>
-                            <Typography className={classes.instructions}>
-                                Έχετε καταχωρηθεί στην σελίδα, μπορείτε να συνδεθείτε στην πλατφόρμα!
-                            </Typography>
+                            <h3>
+                                You have signed up, you can login in the platform right now!
+                            </h3>
                             <Link to="/login">
-                            <Button style={{marginTop:'20px'}} variant="contained" color="primary">
-                                ΣΥΝΔΕΣΗ
+                            <Button style={{marginTop:'20px'}} color="primary">
+                                Log in
                             </Button>
                             </Link>
                         </div>)
@@ -154,8 +154,8 @@ export default function AddMarket() {
                                 ?   (<Typography variant="caption" className={classes.completed}>
                                         Το βήμα {activeStep + 1} έχει ολοκληρωθεί
                                     </Typography>)
-                                :   (<Button variant="contained" color="primary" onClick={handleComplete}>
-                                        {completedSteps() === totalSteps() - 1 ? 'ΟΛΟΚΛΗΡΩΣΗ' : 'ΕΠΟΜΕΝΟ ΒΗΜΑ'}
+                                :   (<Button color="primary" onClick={handleComplete}>
+                                        {completedSteps() === totalSteps() - 1 ? 'Final Step' : 'Next Step'}
                                     </Button>))}
                             </div>
                         </div>)

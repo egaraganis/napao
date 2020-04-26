@@ -11,8 +11,8 @@ class LogInfo extends React.Component {
             <Grid container direction="column" justify="center" alignItems="center">
                 <TextField
                 id="signupmail"
-                label="5. E-mail Καταστήματος"
-                placeholder="Ποιό είναι το email του καταστήματος"
+                label="5.Market's E-mail"
+                placeholder="Give the market's e-mail"
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
@@ -22,8 +22,8 @@ class LogInfo extends React.Component {
                 }}/>
                 <TextField
                 id="signupassword"
-                label="6. Κωδικός Σύνδεσης"
-                placeholder="Πληκτρολογήστε έναν κωδικό σύνδεσης"
+                label="6.Password"
+                placeholder="What's the store's password"
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">

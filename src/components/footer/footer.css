@@ -1,16 +1,10 @@
 .footer-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "description links";
-    min-height:30vh;
-    background:#F48F3A;
+    display:flex;
+    justify-content:space-around;
     position: absolute;
-    top: 100vh; left: 0;right: 0;bottom:0;
+    top: 100vh;
+    left: 0;right:0;
     transition: 0.2s;
-    background: rgb(249,183,80);
-    background: linear-gradient(90deg, rgba(249,183,80,1) 0%, rgba(250,191,74,1) 22%, rgba(247,212,83,1) 66%, rgba(250,229,153,1) 89%);
 }
 
 .footer-container > div {
@@ -19,12 +13,28 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-container > div :hover {
+    cursor: pointer;
 }
 
 .description {
-    grid-area: description;
+    height: 35vh;
+    width: 35vw;
+}
+
+.description  * {
+    margin:7px;
 }
 
 .links {
-    grid-area: links;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+ }
+
+ .links > * {
+     margin:15px;
  }

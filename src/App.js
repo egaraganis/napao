@@ -28,7 +28,6 @@ const CoronaMarketTheme= createMuiTheme({
     overrides: {
         MuiButton: {
             root: {
-                backgroundColor: "#373f51",
                 color: "#d8dbe2",
                 width: 200,
                 '&:hover': {

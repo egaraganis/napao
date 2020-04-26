@@ -25,17 +25,9 @@ const styles = theme => ({
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor: theme.palette.primary.main,
-        borderRadius:'15px',
-        margin:'20px'
-    },
-    button: {
-        '&:hover': {
-            backgroundColor: '#4b5366',
-            borderColor: '#4b5366',
-            boxShadow: 'none',
-        },
-        marginBottom:'20px'
+        borderRadius:'5px',
+        margin:'20px',
+        backgroundColor:'rgb(244, 143, 58,0.8)',
     },
     input: {
         '& label.Mui-focused': {
@@ -54,10 +46,10 @@ const styles = theme => ({
 class FullMap extends Component {
     state = {
         marketSelected:{
-            name: "Σκλαβενίτης",
+            name: "Sklavenitis",
             tel:"2109932172",
             squaremeters:"340",
-            address: "Θεομήτορος 43",
+            address: "Theomitoros 43",
             coords: [23.7263,37.9186],
             photo:"photolink",
             peopleIn:"40",
@@ -106,7 +98,7 @@ class FullMap extends Component {
             <div className="fullMapWrapper">
                 <Backbutton />
                 <div className={classes.searchFilters}>
-                    <h4> Αναζήτηση Καταστημάτων </h4>
+                    <h3> Search for markets </h3>
                     <Select
                       labelId="demo-simple-select-outlined-label"
                       id="demo-simple-select-outlined"
@@ -114,14 +106,14 @@ class FullMap extends Component {
                       value={0}
                       className={classes.input}>
                       <MenuItem value={0}>
-                        Όλα τα καταστήματα
+                        All franchises
                       </MenuItem>
-                      <MenuItem value={10}>Σκλαβενίτης</MenuItem>
-                      <MenuItem value={20}>ΑΒ Βασιλόπουλος</MenuItem>
-                      <MenuItem value={30}>Κρητικός</MenuItem>
+                      <MenuItem value={10}>Sklavenitis</MenuItem>
+                      <MenuItem value={20}>AB Vasilopoulos</MenuItem>
+                      <MenuItem value={30}>Cretekos</MenuItem>
                     </Select>
-                    <Button className={classes.button}>
-                        ΑΝΑΖΗΤΗΣΗ
+                    <Button color="primary" style={{color:'black'}}>
+                        Search
                     </Button>
                 </div>
                 <MapGL
@@ -154,14 +146,14 @@ class FullMap extends Component {
                           vertical: 'bottom',
                           horizontal: 'left',
                         }}>
-                            <div>
-                                <div className="marketPreview" />
+                            <div className="marketPreview">
+                                <div className="marketPreviewPhoto" />
                                 <div className="marketPreviewInfo">
                                     <h3> {this.state.marketSelected.name} </h3>
                                     <h4> {this.state.marketSelected.address} </h4>
-                                    <p style={{color:'green'}}>
-                                        Αυτή την στιγμή το κατάστημα έχει λίγο κόσμο
-                                    </p>
+                                    <h3 style={{color:'green'}}>
+                                        Few people in the store right now !
+                                    </h3>
                                 </div>
                             </div>
                         </Popover>

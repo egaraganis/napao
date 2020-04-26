@@ -1,0 +1,24 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+.textWrapper {
+    font-weight: bold;
+    font-family: 'Poiret One', cursive;
+}
+
+.headline {
+    font-size: 45px;
+    margin:0;
+}
+
+.logoline {
+    border: 1px solid #F48F3A;
+}
+
+.subline {
+    font-size: 25px;
+    margin:0;
+}
+
+.subline span {
+    background-color: #F48F3A;
+    color: black;
+}
