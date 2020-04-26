@@ -27,7 +27,8 @@ class ResultPage extends Component {
     }
 
     componentDidMount(){
-        const marketData = MarketsData.find(market => this.props.match.params.marketname === market.name);
+        const marketData = MarketsData.find(market =>
+            this.props.match.params.marketname.replace(/ .*/,'') === market.name);
         if(marketData)
             this.setState({marketResulted:marketData});
         console.log(marketData);
