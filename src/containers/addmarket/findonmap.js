@@ -17,7 +17,7 @@ class FindStoreInMap extends Component {
         viewport: {
             longitude:23.7263,
             latitude:37.9186,
-            zoom: 5.90,
+            zoom: 10.90,
             height: '34.2vh',
             width: '45vw',
         },

@@ -26,12 +26,12 @@ class ManageStore extends Component {
     constructor(props){
         super(props);
         this.state = {
-            maxPeople: 10,
-            peopleIn: 10,
+            maxPeople: 60,
+            peopleIn: 60,
             viewport: {
                 longitude:23.7263,
                 latitude:37.9186,
-                zoom: 5.80,
+                zoom: 15.80,
                 height: '33.3vh',
                 width: '40vw',
             }
@@ -71,10 +71,10 @@ class ManageStore extends Component {
                     </div>
                     <div className="StoreInfo">
                         <Grid container direction="column">
-                            <h3> Sklavenitis </h3>
-                            <h4> Theomitoros 47</h4>
-                            <p> 2109938654 </p>
-                            <p> 410 s.m. </p>
+                            <h3> YourMarket </h3>
+                            <h4> Theomitoros 43</h4>
+                            <p> 2109932172 </p>
+                            <p> 340 s.m. </p>
                         </Grid>
                         <div>
                             <MapGL

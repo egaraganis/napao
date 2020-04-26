@@ -8,6 +8,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import AddAlertIcon from '@material-ui/icons/AddAlert';
 import ChatIcon from '@material-ui/icons/Chat';
 import LinkIcon from '@material-ui/icons/Link';
+import img from '../../assets/img/store1.jpg';
 import './resultpage.css';
 
 class ResultPage extends Component {
@@ -41,7 +42,7 @@ class ResultPage extends Component {
                 <div className="resultPage">
                     <div className="Info"
                     style={{
-                        backgroundImage:`url(${this.state.marketResulted.photo})`,
+                        backgroundImage: `url(${this.state.marketResulted.photo})`,
                         margin:'10',
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'cover'

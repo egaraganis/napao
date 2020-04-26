@@ -22,6 +22,7 @@
 .Info {
     grid-area: Info;
     margin:10px;
+    background-image: url("../../assets/img/store1.jpg");
 }
 
 .marketBasicInfo {

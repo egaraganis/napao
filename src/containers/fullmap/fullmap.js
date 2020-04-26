@@ -64,7 +64,7 @@ class FullMap extends Component {
         viewport: {
             longitude:23.7263,
             latitude:37.9186,
-            zoom: 15.47,
+            zoom: 14.17,
             height: '100vh',
             width: '99vw',
         },

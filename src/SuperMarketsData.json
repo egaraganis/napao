@@ -1,51 +1,51 @@
 [
     {
-        "name": "Sklavenitis",
+        "name": "YourMarket",
         "tel":"2109932172",
         "squaremeters":"340",
         "address": "Theomitoros 43",
         "coords": [23.7263,37.9186],
-        "photo":"https://www.irafina.gr/wp-content/uploads/2018/11/sklavenitis_spata_emporiko-750x430.jpg",
+        "photo":"https://www.dailynews.com/wp-content/uploads/2019/11/LDN-L-AMAZON-GROCERY-1113-001-1.jpg",
         "peopleIn":"60",
         "maxPeople":"200"
     },
     {
-        "name": "AB Vasilopoulos",
+        "name": "Grocy",
         "tel":"2109932172",
         "squaremeters":"202",
         "address": "Varnali 36",
         "coords": [23.7223,37.9166],
-        "photo":"https://www.lifo.gr/uploads/image/1547620/vasilopoulos.jpg",
-        "peopleIn":"30",
+        "photo":"https://www.alfakat.gr/wp-content/uploads/2018/02/lamia_27-%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.jpg",
+        "peopleIn":"200",
         "maxPeople":"200"
     },
     {
-        "name": "Cretekos",
+        "name": "SuperStore",
         "tel":"2109932172",
         "squaremeters":"500",
         "address": "Leoforos Poseidonos 72",
         "coords": [23.7113,37.9116],
-        "photo":"https://www.news247.gr/img/6949/6474229/009000/w460mobile/460/kritikos.jpg",
-        "peopleIn":"190",
+        "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9hZ6DvwccO5J_V7fbLITB-e0lyh4oGhoEvqp_-OQovCHHNWSX&usqp=CAU",
+        "peopleIn":"200",
         "maxPeople":"200"
     },
     {
-        "name": "MyMarket",
+        "name": "Marketaki",
         "tel":"2109932172",
         "squaremeters":"500",
         "address": "Theotoki 72",
         "coords": [23.7213,37.9116],
-        "photo":"https://banks.com.gr/wp-content/uploads/2018/02/my.jpg",
-        "peopleIn":"120",
+        "photo":"https://ergasiatora.gr/wp-content/uploads/2017/12/mini_market.jpg",
+        "peopleIn":"20",
         "maxPeople":"200"
     },
     {
-        "name": "Lidl",
+        "name": "HyperMarket",
         "tel":"2109932172",
         "squaremeters":"500",
         "address": "Kritis 27",
         "coords": [23.7450,37.9196],
-        "photo":"https://www.retaildetail.be/sites/default/files/styles/news/public/news/shutterstock_1367384339.jpg",
+        "photo":"../../assets/img/store1.jpg",
         "peopleIn":"200",
         "maxPeople":"200"
     }

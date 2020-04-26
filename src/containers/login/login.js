@@ -29,6 +29,7 @@ class Login extends React.Component {
                     <TextField
                     id="passwordlogin"
                     label="Password"
+                    type="password"
                     placeholder="Store's Password"
                     InputProps={{
                         startAdornment: (
