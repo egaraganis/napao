@@ -5,17 +5,17 @@
         "squaremeters":"340",
         "address": "Theomitoros 43",
         "coords": [23.7263,37.9186],
-        "photo":"photolink",
-        "peopleIn":"40",
+        "photo":"https://www.irafina.gr/wp-content/uploads/2018/11/sklavenitis_spata_emporiko-750x430.jpg",
+        "peopleIn":"60",
         "maxPeople":"200"
     },
     {
         "name": "AB Vasilopoulos",
         "tel":"2109932172",
         "squaremeters":"202",
-        "address": "Theomitoros 56",
+        "address": "Varnali 36",
         "coords": [23.7223,37.9166],
-        "photo":"photolink",
+        "photo":"https://www.lifo.gr/uploads/image/1547620/vasilopoulos.jpg",
         "peopleIn":"30",
         "maxPeople":"200"
     },
@@ -23,30 +23,30 @@
         "name": "Cretekos",
         "tel":"2109932172",
         "squaremeters":"500",
-        "address": "Theomitoros 72",
+        "address": "Leoforos Poseidonos 72",
         "coords": [23.7113,37.9116],
-        "photo":"photolink",
-        "peopleIn":"60",
+        "photo":"https://www.news247.gr/img/6949/6474229/009000/w460mobile/460/kritikos.jpg",
+        "peopleIn":"190",
         "maxPeople":"200"
     },
     {
-        "name": "Cretekos",
+        "name": "MyMarket",
         "tel":"2109932172",
         "squaremeters":"500",
-        "address": "Theomitoros 72",
+        "address": "Theotoki 72",
         "coords": [23.7213,37.9116],
-        "photo":"photolink",
-        "peopleIn":"60",
+        "photo":"https://banks.com.gr/wp-content/uploads/2018/02/my.jpg",
+        "peopleIn":"120",
         "maxPeople":"200"
     },
     {
-        "name": "Cretekos",
+        "name": "Lidl",
         "tel":"2109932172",
         "squaremeters":"500",
-        "address": "Theomitoros 72",
+        "address": "Kritis 27",
         "coords": [23.7450,37.9196],
-        "photo":"photolink",
-        "peopleIn":"60",
+        "photo":"https://www.retaildetail.be/sites/default/files/styles/news/public/news/shutterstock_1367384339.jpg",
+        "peopleIn":"200",
         "maxPeople":"200"
     }
 ]

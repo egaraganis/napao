@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Map from '../../containers/map/map';
 import MarketsData from "../../SuperMarketsData.json";
 import Backbutton from "../../components/backbutton/backbutton";
+import CrowdIndicator from "../../components/crowdindicator/crowdindicator";
 import Tooltip from '@material-ui/core/Tooltip';
 import PhoneIcon from '@material-ui/icons/Phone';
 import AddAlertIcon from '@material-ui/icons/AddAlert';
@@ -13,18 +14,23 @@ class ResultPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: "Couldn't find this supermarket",
-            address: "Search again",
-            tel: "",
-            maxPeople: NaN,
-            currentPeople: NaN
+            marketResulted:{
+                name: "Couldn't find this supermarket",
+                address: "Search again",
+                tel: "",
+                coords: null,
+                photo:null,
+                peopleIn:NaN,
+                maxPeople:NaN
+            }
         }
     }
 
     componentDidMount(){
         const marketData = MarketsData.find(market => this.props.match.params.marketname === market.name);
         if(marketData)
-            this.setState(marketData);
+            this.setState({marketResulted:marketData});
+        console.log(marketData);
     }
 
     render() {
@@ -32,13 +38,19 @@ class ResultPage extends Component {
             <div>
                 <Backbutton />
                 <div className="resultPage">
-                    <div className="Info">
+                    <div className="Info"
+                    style={{
+                        backgroundImage:`url(${this.state.marketResulted.photo})`,
+                        margin:'10',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover'
+                    }}>
                         <div className="marketBasicInfo">
-                            <h2 style={{fontWeight:'bold'}}> {this.state.name} </h2>
-                            <h3> {this.state.address} </h3>
+                            <h2 style={{fontWeight:'bold'}}> {this.state.marketResulted.name} </h2>
+                            <h3> {this.state.marketResulted.address} </h3>
                             <div className="actionsWrapper">
                                 <div className="actionWrapper">
-                                    <Tooltip title={this.state.tel}>
+                                    <Tooltip title={this.state.marketResulted.tel}>
                                         <PhoneIcon color="primary"/>
                                     </Tooltip>
                                 </div>
@@ -62,12 +74,20 @@ class ResultPage extends Component {
                      </div>
                      <div className="Meter">
                         <div className="marketBasicInfo">
-                            <h2 style={{margin:'10px'}}> The store currently has:</h2>
-                            <h2 style={{color:'green',fontWeight:'bold'}}> Few customers </h2>
+                            <h3 style={{margin:'10px'}}> Crowd levels:</h3>
+                            <CrowdIndicator
+                            peopleIn={this.state.marketResulted.peopleIn}
+                            maxPeople={this.state.marketResulted.maxPeople}/>
                         </div>
                      </div>
                      <div className="Map">
-                        <Map latitude={this.state.address[0]} longitude={this.state.address[1]} />
+                        { this.state.marketResulted.coords
+                            ?
+                            <Map
+                            latitude={this.state.marketResulted.coords[0]} longitude={this.state.marketResulted.coords[1]} />
+                            :
+                            <p> wait </p>
+                        }
                     </div>
                 </div>
              </div>

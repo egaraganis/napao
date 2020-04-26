@@ -19,3 +19,18 @@
     border-radius:10px;
     margin: 20px;
 }
+
+.actionsWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.actionWrapper {
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.actionWrapper:hover {
+    cursor: pointer;
+}

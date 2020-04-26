@@ -7,11 +7,11 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic29jaWFsZGV2ZWxvcGVyIiwiYSI6ImNrOHljY2owajAwd2gzZW5xYnRqb3o1N24ifQ.M0p-MAwHIx43z-SRiUzpZw";
 
-class App extends Component {
+class Map extends Component {
     state = {
         viewport: {
-            longitude:23.7263,
-            latitude:37.9186,
+            longitude:this.props.latitude,
+            latitude:this.props.longitude,
             zoom: 16.47,
             height: '100vh',
             width: '66vw',
@@ -45,8 +45,8 @@ class App extends Component {
                 mapboxApiAccessToken={MAPBOX_TOKEN}
                 mapStyle="mapbox://styles/mapbox/streets-v11">
                     <Marker
-                      longitude={23.7261}
-                      latitude={37.9189}>
+                      longitude={this.props.latitude}
+                      latitude={this.props.longitude}>
                           <LocationOnIcon color="primary" fontSize="large" />
                     </Marker>
                 </MapGL>
@@ -55,4 +55,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Map;

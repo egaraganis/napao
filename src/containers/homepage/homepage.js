@@ -69,6 +69,7 @@ class Homepage extends React.Component {
                 <Logo className={classes.logo}/>
                 <Paper component="form" className={classes.root} onSubmit={this.handleSubmit}>
                     <InputBase
+                    autoComplete='true'
                     className={classes.input}
                     placeholder="Type grocery's store name, address, other..."
                     onChange = {(event) => this.inputChangedHandler(event)}/>

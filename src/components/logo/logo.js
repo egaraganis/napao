@@ -7,11 +7,11 @@ const useStyles = makeStyles((theme) => ({
     root: {
         color: '#F48F3A',
         textAlign:'center',
-        display:'flex'
+        display:'flex',
     },
     svgIcon: {
         fill:'#F48F3A',
-        height:'12vh',
+        height:'15vh',
         width:'10vw',
         paddingTop:'10px',
         paddingRight:'10px'

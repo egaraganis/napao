@@ -19,27 +19,9 @@
     border-radius: 10px;
 }
 
-.actionsWrapper {
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-}
-
-.actionWrapper {
-    margin-left: 13px;
-    margin-right: 13px;
-}
-
-.actionWrapper:hover {
-    cursor: pointer;
-}
-
 .Info {
     grid-area: Info;
-    margin: 10px;
-    background-image: url("https://www.irafina.gr/wp-content/uploads/2018/11/sklavenitis_spata_emporiko-750x430.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin:10px;
 }
 
 .marketBasicInfo {

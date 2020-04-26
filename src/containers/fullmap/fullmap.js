@@ -7,7 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import Backbutton from "../../components/backbutton/backbutton";
 import Button from '@material-ui/core/Button';
+import CrowdIndicator from "../../components/crowdindicator/crowdindicator";
 import MapGL,{Marker} from "react-map-gl";
+import Tooltip from '@material-ui/core/Tooltip';
+import PhoneIcon from '@material-ui/icons/Phone';
+import AddAlertIcon from '@material-ui/icons/AddAlert';
+import ChatIcon from '@material-ui/icons/Chat';
+import LinkIcon from '@material-ui/icons/Link';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import MarketsData from '../../SuperMarketsData.json';
 import { withStyles } from '@material-ui/core/styles';
@@ -46,19 +52,19 @@ const styles = theme => ({
 class FullMap extends Component {
     state = {
         marketSelected:{
-            name: "Sklavenitis",
-            tel:"2109932172",
-            squaremeters:"340",
-            address: "Theomitoros 43",
-            coords: [23.7263,37.9186],
-            photo:"photolink",
-            peopleIn:"40",
-            maxPeople:"200"
+            name: null,
+            tel:null,
+            squaremeters:null,
+            address: null,
+            coords: null,
+            photo:null,
+            peopleIn:null,
+            maxPeople:null
         },
         viewport: {
             longitude:23.7263,
             latitude:37.9186,
-            zoom: 13.47,
+            zoom: 15.47,
             height: '100vh',
             width: '99vw',
         },
@@ -67,8 +73,8 @@ class FullMap extends Component {
 
     mapRef = React.createRef();
 
-    handleClick = (event) => {
-      this.setState({anchorEl:event.currentTarget});
+    handleClick = (event,MarketData) => {
+      this.setState({marketSelected:MarketData,anchorEl:event.currentTarget});
     };
 
     handleClose = () => {
@@ -111,6 +117,8 @@ class FullMap extends Component {
                       <MenuItem value={10}>Sklavenitis</MenuItem>
                       <MenuItem value={20}>AB Vasilopoulos</MenuItem>
                       <MenuItem value={30}>Cretekos</MenuItem>
+                      <MenuItem value={30}>MyMarket</MenuItem>
+                      <MenuItem value={30}>Lidl</MenuItem>
                     </Select>
                     <Button color="primary" style={{color:'black'}}>
                         Search
@@ -123,41 +131,70 @@ class FullMap extends Component {
                 mapboxApiAccessToken={MAPBOX_TOKEN}
                 mapStyle="mapbox://styles/mapbox/streets-v11">
                     {MarketsData.map( Market =>
-                            <Marker
+                        <Marker
                             longitude={Market.coords[0]}
                             latitude={Market.coords[1]}>
                                 <IconButton
                                 aria-describedby={id}
-                                onClick={this.handleClick}>
+                                onClick={(event) => this.handleClick(event,Market)}>
                                     <LocationOnIcon color="primary" fontSize="large" />
                                 </IconButton>
-                            </Marker>
-                        )}
-                        <Popover
-                        id={id}
-                        open={open}
-                        anchorEl={this.state.anchorEl}
-                        onClose={this.handleClose}
-                        anchorOrigin={{
-                          vertical: 'top',
-                          horizontal: 'left',
-                        }}
-                        transformOrigin={{
-                          vertical: 'bottom',
-                          horizontal: 'left',
-                        }}>
-                            <div className="marketPreview">
-                                <div className="marketPreviewPhoto" />
-                                <div className="marketPreviewInfo">
-                                    <h3> {this.state.marketSelected.name} </h3>
-                                    <h4> {this.state.marketSelected.address} </h4>
-                                    <h3 style={{color:'green'}}>
-                                        Few people in the store right now !
-                                    </h3>
+                        </Marker>
+                    )}
+                </MapGL>
+                <Popover
+                id={id}
+                open={open}
+                anchorEl={this.state.anchorEl}
+                onClose={this.handleClose}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+                transformOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}>
+                    <div className="marketPreview">
+                        <div
+                        className="marketPreviewPhoto"
+                        style={{
+                            backgroundImage: `url(${this.state.marketSelected.photo})`,
+                            backgroundSize: 'cover'
+                        }} />
+                        <div className="marketPreviewInfo">
+                            <h3> {this.state.marketSelected.name} </h3>
+                            <h4> {this.state.marketSelected.address} </h4>
+                            <div className="crowdIndicator">
+                                <CrowdIndicator
+                                peopleIn={this.state.marketSelected.peopleIn}
+                                maxPeople={this.state.marketSelected.maxPeople}/>
+                            </div>
+                            <div className="actionsWrapper">
+                                <div className="actionWrapper">
+                                    <Tooltip title={this.state.marketSelected.tel}>
+                                        <PhoneIcon color="primary"/>
+                                    </Tooltip>
+                                </div>
+                                <div className="actionWrapper">
+                                    <Tooltip title="Send me a notification when store has few people">
+                                        <AddAlertIcon color="primary"/>
+                                    </Tooltip>
+                                </div>
+                                <div className="actionWrapper">
+                                    <Tooltip title="Store announcements">
+                                        <ChatIcon color="primary"/>
+                                    </Tooltip>
+                                </div>
+                                <div className="actionWrapper">
+                                    <Tooltip title="sklavenitis.gr">
+                                        <LinkIcon color="primary"/>
+                                    </Tooltip>
                                 </div>
                             </div>
-                        </Popover>
-                </MapGL>
+                        </div>
+                    </div>
+                </Popover>
             </div>
         );
     }
